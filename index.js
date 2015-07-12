@@ -27,14 +27,12 @@ app
     });
   });
 
-function read(pin, callback) {
-  gpio.setup(pin, gpio.DIR_IN, function () {
+function read(pin, callback) {  
     gpio.read(pin, function (err, value) {
 	  if (err) throw err;
       console.log('Read from pin ' + pin + " value = " + value);	  
       callback(value);
-    });
-  });
+    });  
 }
 
 function write(pin, value, callback) {
